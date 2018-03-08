@@ -1,0 +1,25 @@
+#div_3d{
+    background-color:#000;
+    margin: 0;
+    padding: 0;
+    height: 600px;
+    overflow: hidden !important;  
+}
+
+#div_2d{
+    height: 700px;
+    overflow: auto;
+
+}
+.dwv_div{
+    float: left;
+    margin: 5px;
+    margin-bottom: 20px;
+}
+.layerContainer{
+    clear: both;
+}
+.imageLayer{
+    height: 200px;
+    width: 200px;
+}

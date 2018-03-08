@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <constant name="struts.i18n.encoding" value="UTF-8"></constant>
+
+    <constant name="struts.objectFactory" value="spring"/>
+
+    <package name="basicstruts" extends="struts-default">
+
+    <!--游览病人-->
+    <action name="infoPatients" class="patientActionBean" method="list">
+        <result name="infoJsp">/index/info.jsp</result>
+        <result name="loginJsp">/index/login.jsp</result>
+    </action>
+    <!--添加病人-->
+    <action name="addPatient" class="patientActionBean" method="add">
+        <result name="addJsp" type="redirectAction">infoPatients</result>
+    </action>
+    <!--主页-->
+    <action name="index" class="userActionBean" method="index">
+        <result name="indexJsp">/index/index.jsp</result>
+        <result name="loginJsp">/index/login.jsp</result>
+    </action>
+    <!--登陆-->
+    <action name="login" class="userActionBean" method="login">
+        <result name="loginJsp">/index/login.jsp</result>
+        <result name="indexJsp" type="redirectAction">index</result>
+    </action>
+    <!--注销-->
+    <action name="logout" class="userActionBean" method="logout">
+        <result name="logoutJsp">/index/login.jsp</result>
+    </action>
+    <!--3d-->
+    <action name="xtk" class="vtkActionBean" method="xtk">
+        <result name="xtkJsp">/index/3d.jsp</result>
+        <result name="loginJsp">/index/login.jsp</result>
+    </action>
+    <!--2d_lue-->
+    <action name="dcmList" class="dcmActionBean" method="list">
+        <result name="listJsp">/index/2d_lue.jsp</result>
+        <result name="loginJsp">/index/login.jsp</result>
+    </action>
+    <!--添加2d图像-->
+    <action name="dcmadd" class="dcmActionBean" method="add">
+        <result name="addJsp" type="redirectAction">index</result>
+    </action>
+    <!--2d_xiang-->
+    <action name="dcmView" class="dcmActionBean" method="view">
+        <result name="viewJsp">/index/2d_xiang.jsp</result>
+        <result name="loginJsp">/index/login.jsp</result>
+    </action>
+</package>
+</struts>
